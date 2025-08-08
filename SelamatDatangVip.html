@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu Utama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+  <ul class="After">
+    <li><a href="#" id="toggleBtn" onclick="toggleSidebar()">>ᴗ<</a></li>
+    <li><a href="#" onclick="openContactModal()">Kontak</a></li>
+    <li><a href="https://lahelu.com/post/Plsok64fx" target="_blank" rel="noopener noreferrer">Berita</a></li>
+    <li><a href="#" onclick="openModal('Bubub.jpg')">Wujud Asli Pacar Admin</a></li>
+    <li><a href="#" onclick="openModal('b1e20ae7-047c-44de-9c6d-650bbf181c59.jpg')">Secret VIP</a></li>
+    <li><a href="#" onclick="openModal('Bakekok.jpg')">Peliharaan Secret VIP</a></li>
+  </ul>
+
+  <div id="sideMenu" class="side-menu" style="display:none;">
+    <a href="#">I Love You</a>
+    <a href="#">Halo</a>
+    <a href="#">Ohayo</a>
+  </div>
+
+  <div class="container">
+    <h1>Selamat Datang Para VIP</h1>
+    <p>Anda telah berhasil login ke halaman utama.</p>
+  </div>
+
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <img class="modal-content" id="modalImage" src="" alt="Gambar Modal" />
+  </div>
+
+  <div id="contactModal" class="modal" onclick="closeContactModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeContactModal(event)">&times;</span>
+
+      <form id="contactForm" autocomplete="off" novalidate>
+        <h3>Hubungi Kami</h3>
+        <label for="nameModal">Nama:</label>
+        <input type="text" id="nameModal" name="name" required />
+        <label for="emailModal">Email:</label>
+        <input type="email" id="emailModal" name="email" required />
+        <label for="messageModal">Pesan:</label>
+        <textarea id="messageModal" name="message" rows="4" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+
+      <div id="successMessage" style="display:none;">
+        Terimakasih sudah mau menghubungi Kami!
+        <button id="successCloseBtn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

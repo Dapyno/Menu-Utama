@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 60px;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('Ayangku.jpg') center/cover no-repeat fixed;
+  z-index: -1;
+}
+
+ul.After {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  z-index: 1000;
+  display: flex;
+}
+
+ul.After li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+ul.After li a:hover {
+  background-color: black;
+  transform: scale(1.2);
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 80px auto 40px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 8px;
+}
+
+.container h1, .container p {
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.side-menu {
+  position: fixed;
+  top: 50px;
+  left: 15px;
+  width: 200px;
+  background-color: darkred;
+  display: none;
+  flex-direction: column;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+.side-menu a {
+  padding: 12px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.side-menu a:hover {
+  background-color: black;
+  transform: scale(1.1);
+  position: relative;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {  
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.close {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: none;
+  z-index: 101;
+}
+
+.modal[style*="display: flex"] .close {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #444;
+}
+
+.invalid {
+   border: 2px solid red;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  resize: vertical;
+}
+
+button[type="submit"], #successCloseBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover, #successCloseBtn:hover {
+  background-color: darkred;
+}
+
+#successMessage {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 10px;
+  background-color: black; 
+  color: #2e7d32;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#contactModal .modal-content {
+  background-color: rgba(0,0,0,0.85);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  color: white;
+  position: relative;
+}
+
+#contactModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contactModal input,
+#contactModal textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+#contactModal button[type="submit"] {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-end;
+}
+
+#contactModal button[type="submit"]:hover {
+  background-color: darkred;
+}
+
+#contactModal .close {
+  display: block !important;
+  position: absolute;
+  top: 8px;     
+  right: 12px;    
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+  z-index: 1050; 
+}
+
+#contactModal .close:hover {
+  color: #ccc;
+}
